@@ -1,10 +1,10 @@
-from PyQt5.QtWidgets import QWidget
-from PyQt5.QtCore import pyqtSignal
+from PySide6.QtWidgets import QWidget
+from PySide6.QtCore import Signal
 
 class MyFrame(QWidget):
 
     dName = ""
-    sendDirec = pyqtSignal(str)
+    sendDirec = Signal(str)
 
     def __init__(self,parent=None):
 

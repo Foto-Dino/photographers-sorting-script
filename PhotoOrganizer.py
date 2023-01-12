@@ -3,34 +3,38 @@ from myframe import MyFrame
 import script
 import sys
 import Logo
-from PyQt5.QtCore import Qt
+from PySide6.QtCore import Qt
 import time
 import os
-from PyQt5.QtGui import QIcon
-from PyQt5 import uic
-from PyQt5.QtWidgets import QFileDialog,QMessageBox,QApplication
+import platform
+import subprocess
+from PySide6.QtGui import QIcon
+from PySide6.QtUiTools import loadUiType
+from PySide6.QtWidgets import QFileDialog,QMessageBox,QApplication, QWidget
 from numpy import empty
-from PyQt5.QtCore import QThread, pyqtSignal
+from PySide6.QtCore import QThread, Signal,QFile
 
 
 app=QApplication(sys.argv)
 if getattr(sys,'frozen',False):
     os.chdir(sys._MEIPASS)
-event_dir=[]
 dName=""
 emptyStr = ""
-new_path = ""
-
-form,call=uic.loadUiType("AppUI.ui")
-form3,call3=uic.loadUiType("splash.ui")
-form1,call1=uic.loadUiType("processing.ui")
-form2,call2=uic.loadUiType("processed.ui")
+global new_path
+#form,call=
+# DONE loadUiType returning None? why is that
+# its because pyside6-uic is not accessable over path
+#
+form, call=loadUiType("AppUI.ui")
+form3, call3=loadUiType("splash.ui")
+form1, call1=loadUiType("processing.ui")
+form2, call2=loadUiType("processed.ui")
 
 class SplashScreen(call3,form3):
     def __init__(self):
-
-        super(call3,self).__init__()
-        self.setWindowTitle("Dino Foto")
+        #super(call3,self).__init__()
+        super().__init__()
+        self.setWindowTitle("Foto Dino")
         self.setWindowFlags(Qt.SplashScreen | Qt.FramelessWindowHint)
         self.setFixedWidth(850)
         self.setFixedHeight(580)
@@ -40,13 +44,22 @@ class SplashScreen(call3,form3):
 
 class myApp(call,form):
     def __init__(self):
-        super(call,self).__init__()
+        super().__init__()
         self.setupUi(self)
         # print(width)
-        self.widget.sendDirec.connect(self.setDirec)
+        #self.setOutput.clicked.connect(self.setDirec)
         self.browseButton.clicked.connect(self.askD)
-        self.browseButton.clicked.connect(self.savingPath)
+        self.setOutput.clicked.connect(self.savingPath)
         self.proceedButton.clicked.connect(self.onClick)
+
+        # use standard desktop https://stackoverflow.com/questions/34275782/how-to-get-desktop-location
+        global desktop
+        if platform.system() == "Windows":
+            desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop') 
+        else:
+            desktop = os.path.join(os.path.expanduser('~/Desktop')) 
+
+
         
 
     def change(self):
@@ -58,13 +71,15 @@ class myApp(call,form):
     #Getting directory from button click.
     def askD(self):
         global dName
-        dName = str(QFileDialog.getExistingDirectory(None, "Select Directory"))
+        dName = str(QFileDialog.getExistingDirectory(None, "Select Directory", desktop))
         self.direcText.setText(dName)
         # print("directory: ",dName)
+
     def savingPath(self,):
         global savingD
-        savingD = str(QFileDialog.getExistingDirectory(None, "Select Directory"))
-        self.direcText.setText(dName)
+        #QMessageBox.information(self,"Select Folder","Select folder where you want to save files", QMessageBox.Ok, QMessageBox.Ok)
+        savingD = str(QFileDialog.getExistingDirectory(None, "Select Directory", desktop))
+        self.label_3.setText(savingD)
 
     #Getting directory from drop event of myframe.
     def setDirec(self,directory):
@@ -109,8 +124,12 @@ class ProcessingPage(call1,form1):
     
     
     def onFinished(self):
-        self.main = ProcessedPage(self.organize.event_dir,self.organize.event_dir_lis)
-        self.main.setWindowTitle("Dino Foto")
+        #self.main = ProcessedPage(self.organize.event_dir,self.organize.event_dir_lis)
+
+        self.main = ProcessedPage(self.organize.new_path, self.organize.event_dir_lis)
+
+
+        self.main.setWindowTitle("Foto Dino")
         self.setWindowIcon(QIcon('resources/dino-new.png')) 
         self.main.show()
         self.close()
@@ -128,27 +147,40 @@ class ProcessedPage(call2,form2):
         self.setupUi(self)
         self.nextButton.clicked.connect(self.change)
         self.dashboardButton.clicked.connect(self.toDashboard)
-        self.eLabel.setText(self.event_dir)
+	
+        #self.eLabel.setText(self.event_dir)
+	
         self.viewButton.clicked.connect(self.openDirec)
 
     def change(self):
         self.main = myApp()
-        self.main.setWindowTitle("Dino Foto")
+        self.main.setWindowTitle("Foto Dino")
         self.setWindowIcon(QIcon('resources/dino-new.png')) 
         self.main.show()
         self.close()
 
     def toDashboard(self):
-        webbrowser.open('www.foto-dino.de')
+        webbrowser.open('https://drive.google.com/drive/u/2/folders/1VLBdvKhYt3Faw5UVPCLGWb1op1YZXDx4')
     
     def openDirec(self):
         # webbrowser.open(self.event_dir)
-        webbrowser.open(new_path)
+        # https://stackoverflow.com/questions/6631299/python-opening-a-folder-in-explorer-nautilus-finder
+        # show folder containing the clients
+        final_output_path = self.event_dir
+        # show folder containing the event
+        final_output_path = savingD
+
+        if platform.system() == "Windows":
+            os.startfile(final_output_path)
+        elif platform.system() == "Darwin":
+            subprocess.Popen(["open", final_output_path])
+        else:
+            subprocess.Popen(["xdg-open", final_output_path])
         
 
 
 class External(QThread):
-    countChanged = pyqtSignal(list)
+    countChanged = Signal(list)
 
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
@@ -157,8 +189,10 @@ class External(QThread):
         self.new_path = None
     
     def run(self):
-        self.event_dir_lis, self.event_dir, new_path = script.mainFunc(self,dName, savingD)
+        print("Here is saving directory", savingD)
+        #self.event_dir_lis, self.event_dir, new_path = script.mainFunc(self,dName, savingD)
 
+        self.new_path = script.mainFunc(self, dName, savingD)
 
 
 
@@ -168,7 +202,7 @@ if __name__ == '__main__':
     time.sleep(2)
     splash.close()
     ex = myApp()
-    ex.setWindowTitle("Dino Foto")
+    ex.setWindowTitle("Foto Dino")
     ex.setWindowIcon(QIcon('resources/dino-new.png')) 
     ex.show()
     sys.exit(app.exec_())

@@ -6,331 +6,273 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>580</height>
+    <width>700</width>
+    <height>540</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>700</width>
+    <height>16777215</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Photo Organizer</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QFrame" name="frame">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>850</width>
-      <height>580</height>
-     </rect>
+   <property name="maximumSize">
+    <size>
+     <width>700</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="spacing">
+     <number>0</number>
     </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
+    <property name="leftMargin">
+     <number>0</number>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <property name="topMargin">
+     <number>0</number>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+    <property name="rightMargin">
+     <number>0</number>
     </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+    <property name="bottomMargin">
+     <number>0</number>
     </property>
-    <widget class="QFrame" name="frame_2">
-     <property name="geometry">
-      <rect>
-       <x>95</x>
-       <y>120</y>
-       <width>660</width>
-       <height>360</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">.QFrame{
-border: 1.5px solid #8ba5c6;
-background-color: rgb(247, 247, 247);
-border-radius: 10px;
-}
-</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <widget class="QFrame" name="dropFrame">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>149</y>
-        <width>540</width>
-        <height>181</height>
-       </rect>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
       </property>
-      <property name="styleSheet">
-       <string notr="true">.QFrame{
-border-style:dotted;
-border-color: rgb(204, 204, 204);
-border-radius:10px
-}
-
-dropFrame.QFrame{
-text-align:center;
-}</string>
+      <property name="currentIndex">
+       <number>0</number>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="MyFrame" name="widget" native="true">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>540</width>
-         <height>181</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: none;
-border: none;
-color:none;</string>
-       </property>
-       <widget class="QWidget" name="horizontalLayoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>20</y>
-          <width>481</width>
-          <height>68</height>
-         </rect>
+      <widget class="QWidget" name="page">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="spacing">
+         <number>0</number>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <property name="sizeConstraint">
-          <enum>QLayout::SetNoConstraint</enum>
-         </property>
-         <item>
-          <widget class="QLabel" name="dragLabel">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>416</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Roboto</family>
-             <pointsize>16</pointsize>
-             <weight>75</weight>
-             <italic>false</italic>
-             <bold>true</bold>
-            </font>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QFrame" name="frame">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <widget class="QLabel" name="label_2">
+           <property name="geometry">
+            <rect>
+             <x>120</x>
+             <y>-40</y>
+             <width>431</width>
+             <height>201</height>
+            </rect>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(0, 0, 0);
-border-color: rgb(247, 247, 247);
-font: 16pt &quot;Roboto&quot;;
-font-weight: bold;
-background-color: rgb(247, 247, 247);
-text-align:center;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
-            <string>Drag &amp; drop your pictures of
-one event here</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/newPrefix/resources/dino-new.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="horizontalLayoutWidget_2">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>100</y>
-          <width>301</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <property name="sizeConstraint">
-          <enum>QLayout::SetNoConstraint</enum>
-         </property>
-         <item>
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+          <widget class="QFrame" name="frame_6">
+           <property name="geometry">
+            <rect>
+             <x>110</x>
+             <y>220</y>
+             <width>471</width>
+             <height>271</height>
+            </rect>
            </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_4">
            <property name="styleSheet">
-            <string notr="true">color: rgb(0, 0, 0);
-border-color: rgb(247, 247, 247);
-font: 10pt &quot;Roboto&quot;;
-background-color: rgb(247, 247, 247);</string>
+            <string notr="true">background-color: rgb(250, 250, 250);
+border-radius:6px;</string>
            </property>
-           <property name="text">
-            <string>or</string>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
            </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="browseButton">
-           <property name="styleSheet">
-            <string notr="true">
-border:none;
-color: rgb(135, 169, 202);
-text-decoration: underline;
-font: 10pt &quot;Roboto&quot;;
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QPushButton" name="proceedButton">
+            <property name="geometry">
+             <rect>
+              <x>35</x>
+              <y>208</y>
+              <width>401</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(135, 169, 202);
+border-bottom-color: rgb(255, 255, 255);
+color: rgb(255, 255, 255);
+border-top-color: rgb(0, 0, 0);
+border-right-color: rgb(0, 0, 0);
+border-left-color: rgb(247, 247, 247);
+border-left-color: rgb(0, 0, 0);
+border: 1px solid #000000;
+border-radius: 5;
+font: 18pt &quot;Roboto&quot;;
 font-weight: bold;
-background-color: rgb(247, 247, 247);
 </string>
-           </property>
-           <property name="text">
-            <string>browse files</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_5">
-           <property name="styleSheet">
-            <string notr="true">color: rgb(0, 0, 0);
-border-color: rgb(247, 247, 247);
-font: 10pt &quot;Roboto&quot;;
-background-color: rgb(247, 247, 247);</string>
-           </property>
-           <property name="text">
-            <string>on your computer</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QLabel" name="direcText">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>140</y>
-          <width>481</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: black;
-border-color: rgb(247, 247, 247);
-font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-font-style:italic;
-background-color: rgb(247, 247, 247);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="horizontalLayoutWidget_3">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>30</y>
-        <width>541</width>
-        <height>101</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <property name="sizeConstraint">
-        <enum>QLayout::SetNoConstraint</enum>
-       </property>
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Pacifico</family>
-           <pointsize>24</pointsize>
-           <weight>75</weight>
-           <italic>false</italic>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 24pt &quot;Pacifico&quot;;
+            </property>
+            <property name="text">
+             <string>Proceed</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="direcText">
+            <property name="geometry">
+             <rect>
+              <x>35</x>
+              <y>68</y>
+              <width>391</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Input Path:</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_3">
+            <property name="geometry">
+             <rect>
+              <x>35</x>
+              <y>158</y>
+              <width>391</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Output Path:</string>
+            </property>
+           </widget>
+           <widget class="QFrame" name="frame_3">
+            <property name="geometry">
+             <rect>
+              <x>35</x>
+              <y>28</y>
+              <width>401</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(245, 245, 245);
+border-radius:5px;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QLabel" name="label_4">
+             <property name="geometry">
+              <rect>
+               <x>8</x>
+               <y>5</y>
+               <width>171</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Pacifico</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 12pt &quot;Pacifico&quot;;
+
 color: rgb(135, 169, 202);
 font-weight: bold;
 border-color:rgb(247, 247, 247);
+border-radius:4px;
 border:none;
-background-color: rgb(247, 247, 247);</string>
-         </property>
-         <property name="text">
-          <string>Hello Photographer</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>-105</y>
-       <width>431</width>
-       <height>201</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/newPrefix/resources/dino-new.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="proceedButton">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>510</y>
-       <width>351</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(230, 195, 79);
+</string>
+             </property>
+             <property name="text">
+              <string>Choose Input Folder:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="browseButton">
+             <property name="geometry">
+              <rect>
+               <x>230</x>
+               <y>0</y>
+               <width>141</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(230, 195, 79);
 border-bottom-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);
 border-top-color: rgb(0, 0, 0);
@@ -342,22 +284,161 @@ border-radius: 5;
 font: 10pt &quot;Roboto&quot;;
 font-weight: bold;
 </string>
-     </property>
-     <property name="text">
-      <string>Proceed</string>
-     </property>
-    </widget>
-   </widget>
+             </property>
+             <property name="text">
+              <string>browse</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QFrame" name="frame_4">
+            <property name="geometry">
+             <rect>
+              <x>35</x>
+              <y>108</y>
+              <width>401</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(245, 245, 245);
+border-radius:5px;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QLabel" name="label_5">
+             <property name="geometry">
+              <rect>
+               <x>-16</x>
+               <y>-2</y>
+               <width>211</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Pacifico</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 12pt &quot;Pacifico&quot;;
+
+color: rgb(135, 169, 202);
+font-weight: bold;
+border-color:rgb(247, 247, 247);
+border-radius:4px;
+border:none;
+</string>
+             </property>
+             <property name="text">
+              <string>Choose Output Path:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="setOutput">
+             <property name="geometry">
+              <rect>
+               <x>230</x>
+               <y>0</y>
+               <width>141</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(230, 195, 79);
+border-bottom-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-top-color: rgb(0, 0, 0);
+border-right-color: rgb(0, 0, 0);
+border-left-color: rgb(247, 247, 247);
+border-left-color: rgb(0, 0, 0);
+border: 1px solid #000000;
+border-radius: 5;
+font: 10pt &quot;Roboto&quot;;
+font-weight: bold;
+</string>
+             </property>
+             <property name="text">
+              <string>browse</string>
+             </property>
+            </widget>
+           </widget>
+          </widget>
+          <widget class="QTextEdit" name="textEdit">
+           <property name="geometry">
+            <rect>
+             <x>200</x>
+             <y>160</y>
+             <width>381</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border:None;</string>
+           </property>
+           <property name="html">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:600; color:#87a9ca;&quot;&gt;Hello!!&lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600; color:#e6c34f;&quot;&gt;Photographers&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+          <zorder>frame_6</zorder>
+          <zorder>label_2</zorder>
+          <zorder>textEdit</zorder>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>MyFrame</class>
-   <extends>QWidget</extends>
-   <header>myframe</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
