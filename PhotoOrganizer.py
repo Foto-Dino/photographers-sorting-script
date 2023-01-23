@@ -8,6 +8,15 @@ import time
 import os
 import platform
 import subprocess
+import sysconfig
+
+# change to pyinstaller temp dir
+try:
+    os.chdir(sys._MEIPASS)
+    print(sys._MEIPASS)
+except:
+    pass
+
 from PySide6.QtGui import QIcon
 from PySide6.QtUiTools import loadUiType
 from PySide6.QtWidgets import QFileDialog,QMessageBox,QApplication, QWidget
@@ -24,7 +33,10 @@ global new_path
 #form,call=
 # DONE loadUiType returning None? why is that
 # its because pyside6-uic is not accessable over path
-#
+
+app_path = os.path.join(sysconfig.get_path('scripts'))
+os.environ["PATH"] += os.pathsep + app_path
+
 form, call=loadUiType("AppUI.ui")
 form3, call3=loadUiType("splash.ui")
 form1, call1=loadUiType("processing.ui")
